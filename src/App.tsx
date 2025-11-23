@@ -9,6 +9,7 @@ import Auth from "./pages/Auth";
 import Home from "./pages/Home";
 import ObjectDetail from "./pages/ObjectDetail";
 import CreateObject from "./pages/CreateObject";
+import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -43,6 +44,14 @@ const App = () => (
               element={
                 <ProtectedRoute>
                   <CreateObject />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/perfil"
+              element={
+                <ProtectedRoute>
+                  <Profile />
                 </ProtectedRoute>
               }
             />
