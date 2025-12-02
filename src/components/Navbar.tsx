@@ -20,6 +20,7 @@ import {
   Home,
   Menu,
   X,
+  Shuffle,
 } from "lucide-react";
 import ChatModal from "./ChatModal";
 import NotificationDropdown from "./NotificationDropdown";
@@ -47,6 +48,7 @@ const Navbar = () => {
   const navLinks = [
     { to: "/", label: "Início", icon: Home },
     { to: "/meus-objetos", label: "Meus Objetos", icon: Package },
+    { to: "/minhas-trocas", label: "Minhas Trocas", icon: Shuffle },
   ];
 
   return (

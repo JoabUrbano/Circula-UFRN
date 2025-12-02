@@ -11,6 +11,7 @@ import ObjectDetail from "./pages/ObjectDetail";
 import CreateObject from "./pages/CreateObject";
 import Profile from "./pages/Profile";
 import MyObjects from "./pages/MyObjects";
+import Trades from "./pages/Trades";
 import ProposeTrade from "./pages/ProposeTrade";
 import NotFound from "./pages/NotFound";
 
@@ -62,6 +63,14 @@ const App = () => (
               element={
                 <ProtectedRoute>
                   <MyObjects />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/minhas-trocas"
+              element={
+                <ProtectedRoute>
+                  <Trades />
                 </ProtectedRoute>
               }
             />
