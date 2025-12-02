@@ -9,6 +9,7 @@ import Auth from "./pages/Auth";
 import Home from "./pages/Home";
 import ObjectDetail from "./pages/ObjectDetail";
 import CreateObject from "./pages/CreateObject";
+import EditObject from "./pages/EditObject";
 import Profile from "./pages/Profile";
 import MyObjects from "./pages/MyObjects";
 import Trades from "./pages/Trades";
@@ -47,6 +48,14 @@ const App = () => (
               element={
                 <ProtectedRoute>
                   <CreateObject />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/editar-objeto/:id"
+              element={
+                <ProtectedRoute>
+                  <EditObject />
                 </ProtectedRoute>
               }
             />

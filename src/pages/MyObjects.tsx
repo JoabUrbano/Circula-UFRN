@@ -7,7 +7,7 @@ import Navbar from "@/components/Navbar";
 import ObjectCard from "@/components/ObjectCard";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Loader2, Plus, Package } from "lucide-react";
+import { Loader2, Plus, Package, Edit } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import {
   Select,
@@ -187,7 +187,7 @@ const MyObjects = () => {
                   {filteredObjects.map((object, index) => (
                     <div
                       key={object.id}
-                      className="relative animate-in fade-in slide-in-from-bottom-8 fill-mode-backwards"
+                      className="relative animate-in fade-in slide-in-from-bottom-8 fill-mode-backwards group"
                       style={{ animationDelay: `${index * 50}ms` }}
                     >
                       <ObjectCard object={object} />
@@ -202,6 +202,15 @@ const MyObjects = () => {
                           {getStatusLabel(object.status)}
                         </div>
                       </div>
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        className="absolute bottom-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        onClick={() => navigate(`/editar-objeto/${object.id}`)}
+                        title="Editar objeto"
+                      >
+                        <Edit className="h-4 w-4" />
+                      </Button>
                     </div>
                   ))}
                 </div>
