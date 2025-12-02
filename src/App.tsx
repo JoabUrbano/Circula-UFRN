@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import ObjectDetail from "./pages/ObjectDetail";
 import CreateObject from "./pages/CreateObject";
 import Profile from "./pages/Profile";
+import MyObjects from "./pages/MyObjects";
 import ProposeTrade from "./pages/ProposeTrade";
 import NotFound from "./pages/NotFound";
 
@@ -53,6 +54,14 @@ const App = () => (
               element={
                 <ProtectedRoute>
                   <Profile />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/meus-objetos"
+              element={
+                <ProtectedRoute>
+                  <MyObjects />
                 </ProtectedRoute>
               }
             />

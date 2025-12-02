@@ -124,7 +124,15 @@ const Profile = () => {
         </Card>
 
         <div>
-          <h3 className="text-2xl font-bold text-foreground mb-4">Meus Objetos</h3>
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-2xl font-bold text-foreground">Meus Objetos</h3>
+            <Button 
+              onClick={() => navigate('/meus-objetos')} 
+              variant="outline"
+            >
+              Ver Todos
+            </Button>
+          </div>
           {objects.length === 0 ? (
             <Card>
               <CardContent className="py-8 text-center text-muted-foreground">
@@ -138,11 +146,22 @@ const Profile = () => {
               </CardContent>
             </Card>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-              {objects.map((object) => (
-                <ObjectCard key={object.id} object={object} />
-              ))}
-            </div>
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-6">
+                {objects.slice(0, 4).map((object) => (
+                  <ObjectCard key={object.id} object={object} />
+                ))}
+              </div>
+              {objects.length > 4 && (
+                <Button 
+                  onClick={() => navigate('/meus-objetos')} 
+                  variant="outline"
+                  className="w-full"
+                >
+                  Ver os {objects.length} objetos
+                </Button>
+              )}
+            </>
           )}
         </div>
       </div>
